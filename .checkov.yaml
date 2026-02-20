@@ -1,0 +1,3 @@
+# .checkov.yaml
+skip-check:
+  - CKV_GCP_62 # Logging is disabled for log_bucket to avoid circular dependency
