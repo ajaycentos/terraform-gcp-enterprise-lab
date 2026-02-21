@@ -8,3 +8,9 @@ module "cloud_storage" {
   location   = "us-east1"
   prefix     = "enterprise"
 }
+
+resource "google_storage_bucket_object" "hello_world" {
+  name    = "hello.txt"
+  content = "Hello from Terraform!"
+  bucket  = module.cloud_storage.names["test-bucket-alpha"]
+}
