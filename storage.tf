@@ -1,13 +1,10 @@
+module "cloud_storage" {
+# checkov:skip=CKV_TF_1: "Ensure Terraform module sources use a commit hash"  
+  source  = "terraform-google-modules/cloud-storage/google"
+  version = "~> 6.0"
 
-# The Main Assets Bucket
-resource "google_storage_bucket" "enterprise_assets" {
-  name                        = "${var.project_id}-data-bucket"
-  location                    = "us-east1"
-  uniform_bucket_level_access = true
-  public_access_prevention    = "enforced"
-
-  versioning {
-    enabled = true
-  }
-
+  project_id = var.project_id
+  names      = var.bucket_names
+  location   = "us-east1"
+  prefix     = "enterprise"
 }

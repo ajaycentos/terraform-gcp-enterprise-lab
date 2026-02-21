@@ -2,7 +2,7 @@ terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "~> 4.0"
+      version = ">= 5.22.0, < 7.0.0"
     }
   }
 }
@@ -12,7 +12,12 @@ provider "google" {
   region  = "us-east1"
 }
 
-variable "project_id" {
-  description = "The ID of the GCP project"
-  type        = string
+terraform {
+  cloud {
+    organization = "ajay-lab-terraform"
+
+    workspaces {
+      name = "terraform-gcp-enterprise-lab"
+    }
+  }
 }
