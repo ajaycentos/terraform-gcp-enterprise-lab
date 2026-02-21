@@ -6,3 +6,10 @@ output "bucket_names" {
   description = "The URLs of the created storage names"
   value       = module.cloud_storage.names
 }
+output "bucket_alpha" {
+
+  description = "The URLs of the created storage names"
+
+  value       = module.cloud_storage.names["test-bucket-alpha"]
+
+}
