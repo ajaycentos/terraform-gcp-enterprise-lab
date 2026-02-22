@@ -7,3 +7,7 @@ variable "bucket_names" {
   type        = list(string)
   description = "A list of names for the storage buckets"
 }
+variable "vpc_name" {
+  type        = string
+  description = "A list of names for the storage buckets"
+}
