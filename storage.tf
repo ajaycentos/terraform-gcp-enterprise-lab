@@ -18,5 +18,5 @@ resource "google_storage_bucket_object" "hello_world" {
 resource "google_storage_bucket_iam_member" "member" {
   bucket = module.cloud_storage.names["test-bucket-alpha"]
   role = "roles/storage.admin"
-  member = "user:gcpadmin@sunshsani.co.in"
+  member = "user:gcpadmin@sunshani.co.in"
 }
