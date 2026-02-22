@@ -14,3 +14,9 @@ resource "google_storage_bucket_object" "hello_world" {
   content = "Hello from Terraform!"
   bucket  = module.cloud_storage.names["test-bucket-alpha"]
 }
+
+resource "google_storage_bucket_iam_member" "member" {
+  bucket = module.cloud_storage.names["test-bucket-alpha"]
+  role = "roles/storage.admin"
+  member = "user:gcpadmin@sunshsani.co.in"
+}
